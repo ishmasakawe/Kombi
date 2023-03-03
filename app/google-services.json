@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "548834679608",
+    "project_id": "justwork-ca46f",
+    "storage_bucket": "justwork-ca46f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548834679608:android:5a4d79700fda3dfb9d3fcd",
+        "android_client_info": {
+          "package_name": "com.example.justwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548834679608-qsjjv491hc8cp3fbi49m3n86ivn347sk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjB49KlxQVfMKIkRvK1_dBtMWC5_kWwPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548834679608-qsjjv491hc8cp3fbi49m3n86ivn347sk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

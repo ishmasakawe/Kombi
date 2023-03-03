@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CARPOOLING</string>
+    <string name="Password" />
+    <string name="Log_in">Log in</string>
+    <string name="Sumit_login">Submit</string>
+    <string name="openMessage">REDUCING CARBON</string>
+    <string name="SubmitRegistration">Submit</string>
+    <string name="Name">Name</string>
+    <string name="Student_Number">Student Number</string>
+    <string name="University">University</string>
+    <string name="Phone_Number">Phone Number</string>
+    <string name="Email">Email</string>
+    <string name="Dob">Dob</string>
+    <string name="HomePostcode">Home Postcode</string>
+    <string name="Address_Line">Address Line</string>
+    <string name="Register">Register</string>
+    <string name="Change_password">Forgot</string>
+    <string name="passwordtxt">Password</string>
+</resources>
