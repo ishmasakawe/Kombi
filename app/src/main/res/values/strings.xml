@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CARPOOLING</string>
+    <string name="app_name">KOMBI</string>
     <string name="Password" />
     <string name="Log_in">Log in</string>
     <string name="Sumit_login">Submit</string>
@@ -31,5 +31,7 @@
     <string name="selectseats">Select seats</string>
     <string name="selectdayui">Select Day</string>
     <string name="selectday">Select day</string>
+    <string name="GO">GO</string>
+    <string name="Rideshare">Kombi scheduled</string>
     />
 </resources>

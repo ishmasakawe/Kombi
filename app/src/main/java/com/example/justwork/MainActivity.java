@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth authLogin;
     FirebaseFirestore firebaseFirestore;
+    private boolean userLocationPermissionsGranted = false ; //mlocation
 
 
     @Override
@@ -49,6 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edtPassword = findViewById(R.id.edt_passwordLogin);
         edtEmail = findViewById(R.id.edt_emailLogin);
         firebaseFirestore = FirebaseFirestore.getInstance();
+
+
+
+
         }
 
     @Override
