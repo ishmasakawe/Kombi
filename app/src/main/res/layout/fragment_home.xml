@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/show_cb_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradientbackground">
+
+        <TextView
+            android:id="@+id/carbon_balance_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="24dp"
+            android:text="Carbon balance: "
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/iv_welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.94"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/iv_welcome"
+            android:layout_width="350dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="112dp"
+            android:background="@drawable/tvstandardbackgound"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_welcome_top"
+            android:layout_width="320dp"
+            android:layout_height="100dp"
+            android:background="@drawable/whiteroundcorners"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_welcome"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <EditText
+            android:id="@+id/txt_welcome"
+            android:layout_width="264dp"
+            android:layout_height="44dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="welcome back"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/iv_welcome_top"
+            app:layout_constraintEnd_toEndOf="@+id/iv_welcome"
+            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintStart_toStartOf="@+id/iv_welcome"
+            app:layout_constraintTop_toTopOf="@+id/iv_welcome"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <EditText
+            android:id="@+id/tv_showedNoPlannedTrips"
+            android:layout_width="57dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="16dp"
+            android:contextClickable="false"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="@+id/iv_welcome_top"
+            app:layout_constraintHorizontal_bias="0.14"
+            app:layout_constraintStart_toStartOf="@+id/iv_welcome_top"
+            app:layout_constraintTop_toTopOf="@+id/iv_welcome_top" />
+
+        <TextView
+            android:id="@+id/txt_tripNoDes"
+            android:layout_width="164dp"
+            android:layout_height="82dp"
+            android:text="this is the total active trips you have schedueled "
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_welcome_top"
+            app:layout_constraintEnd_toEndOf="@+id/iv_welcome_top"
+            app:layout_constraintHorizontal_bias="0.839"
+            app:layout_constraintStart_toStartOf="@+id/iv_welcome_top"
+            app:layout_constraintTop_toTopOf="@+id/iv_welcome_top"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <Button
+            android:id="@+id/btn_makeRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="53dp"
+            android:text="@string/makerequest"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/iv_welcome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+

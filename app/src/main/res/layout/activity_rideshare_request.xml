@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/show_cb_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".RideshareRequest">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradientbackground">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_dropDown2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="336dp"
+            android:layout_height="186dp"
+            android:layout_marginTop="110dp"
+            android:hint="@string/select"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textInputLayout">
+
+
+            <AutoCompleteTextView
+                android:id="@+id/tv_requestForm"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:inputType="none"
+                android:text="@string/selectseats"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black">
+
+            </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="336dp"
+            android:layout_height="186dp"
+            android:layout_marginTop="120dp"
+            android:hint="@string/select"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <AutoCompleteTextView
+                android:id="@+id/tv_requestForm2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:inputType="none"
+                android:text="@string/select"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black">
+
+            </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tv_dropDown3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="336dp"
+            android:layout_height="186dp"
+            android:layout_marginTop="110dp"
+            android:hint="@string/select"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_dropDown2">
+
+
+            <AutoCompleteTextView
+                android:id="@+id/tv_requestForm3"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:inputType="none"
+                android:text="@string/selectday"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                tools:visibility="visible">
+
+            </AutoCompleteTextView>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <EditText
+            android:id="@+id/et_PostalAddress"
+            android:layout_width="335dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:hint="Meet up point Address"
+            android:inputType="textPostalAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_dropDown2" />
+
+        <EditText
+            android:id="@+id/et_postCode"
+            android:layout_width="335dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:hint="Meet up point Postcode"
+            android:inputType="textPostalAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_PostalAddress" />
+
+        <EditText
+            android:id="@+id/et_ETD"
+            android:layout_width="335dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:hint="ETD"
+            android:inputType="time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_postCode" />
+
+        <EditText
+            android:id="@+id/et_ETA"
+            android:layout_width="335dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:hint="ETA"
+            android:inputType="time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_ETD" />
+
+        <Button
+            android:id="@+id/btn_submitRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/SubmitRegistration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.411"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_ETA" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

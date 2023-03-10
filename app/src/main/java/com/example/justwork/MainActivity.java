@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.checkerframework.checker.units.qual.C;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,13 +46,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnLogin = findViewById(R.id.button_login);
         btnLogin.setOnClickListener(this);
-
         edtPassword = findViewById(R.id.edt_passwordLogin);
         edtEmail = findViewById(R.id.edt_emailLogin);
         firebaseFirestore = FirebaseFirestore.getInstance();
-
-
-
         }
 
     @Override
@@ -62,12 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_login:
                 userLogin();
-                startActivity( new Intent(this, UserProfileHome.class));
                 break;
 
         }
     }
-
+    //navigation logic
     private void userLogin() {
         String email = edtEmail.getText().toString().trim();
         String password = edtPassword.getText().toString().trim();
@@ -97,38 +94,52 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             if (doc.exists()) { //verifying password
 
                                 if( password.equalsIgnoreCase(doc.getString("PASSWORD"))) {
-
-                                    System.out.print("User email: ");
-                                    System.out.println(doc.getString("PASSWORD"));
-                                    String HOME_ADDRESS = doc.getString("HOME_ADDRESS");
+                                    //getting Data from the database
                                     String HOME_POSTCODE = doc.getString("HOME_POSTCODE");
-                                    String UNI = doc.getString("UNI");
                                     String PHONE_NUMBER = doc.getString("PHONE_NUMBER");
                                     String STUDENT_NUMBER = doc.getString("STUDENT_NUMBER");
                                     String PASSWORD = doc.getString("PASSWORD");
                                     String FULL_NAME = doc.getString("FULL_NAME");
                                     String EMAIL = doc.getString("EMAIL");
                                     String DOB = doc.getString("DOB");
-                                    Integer CARBON_RANK = Integer.parseInt(String.valueOf(doc.getLong("CARBON_RANK")));
-                                    Integer CARBON_BALANCE = Integer.parseInt(String.valueOf(doc.getLong("CARBON_BALANCE")));
-                                    Integer P_RANK = Integer.parseInt(String.valueOf(doc.getLong("P_RANK")));
+                                    String CARBON_RANK = String.valueOf(doc.getLong("CARBON_RANK"));
+                                    String CARBON_BALANCE = String.valueOf(doc.getLong("CARBON_BALANCE"));
+                                    String P_RANK = String.valueOf(doc.getLong("P_RANK"));
+                                    String UNI = doc.getString("UNI");
+                                    String value="Hello world";
 
-                                    User regUser = new User(HOME_ADDRESS, HOME_POSTCODE, FULL_NAME, PASSWORD, STUDENT_NUMBER, PHONE_NUMBER, DOB, UNI, CARBON_BALANCE
-                                            , EMAIL, CARBON_RANK, P_RANK);
-                                    regUser.setCarbonBalance(CARBON_RANK);
-                                    System.out.println(regUser.getCarbonBalance());
+                                    Intent C = new Intent(MainActivity.this, RideshareRequest.class);
+                                    C.putExtra("Email", EMAIL);
+                                    C.putExtra("FULL_NAME", FULL_NAME);
+                                    C.putExtra("PHONE_NUMBER", PHONE_NUMBER);
+                                    C.putExtra("STUDENT_NUMBER", STUDENT_NUMBER);
+                                    startActivity(C);
 
+                                    Intent i = new Intent(MainActivity.this, UserProfileHome.class);
+                                    i.putExtra("key", value);
+                                    i.putExtra("Email", EMAIL);
+                                    i.putExtra("HOME_POSTCODE", HOME_POSTCODE);
+                                    i.putExtra("FULL_NAME", FULL_NAME);
+                                    i.putExtra("UNI", UNI);
+                                    i.putExtra("PHONE_NUMBER", PHONE_NUMBER);
+                                    i.putExtra("STUDENT_NUMBER", STUDENT_NUMBER);
+                                    i.putExtra("PASSWORD", PASSWORD);
+                                    i.putExtra("DOB", DOB);
+                                    i.putExtra("CARBON_RANK", CARBON_RANK);
+                                    i.putExtra("CARBON_BALANCE", CARBON_BALANCE);
+                                    i.putExtra("P_RANK", P_RANK);
+
+
+                                    startActivity(i);
                                     Intent intent = new Intent(getApplicationContext(), UserProfileHome.class);
-                                    intent.putExtra("message", email);
-                                    startActivity(intent);
-                                    finish();
+                                    //creating a new intent nullifies the old intent hence the issue I was experiencing
 
+                                    //open the class to open the new activity do not do this again
 
                                 }
                                 else {
                                     Toast.makeText(MainActivity.this, "wrong password", Toast.LENGTH_SHORT).show();
                                     return;
-
                                 }
                             }
                             else {
@@ -139,7 +150,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
 
                 });
-
-
     }
+
 }

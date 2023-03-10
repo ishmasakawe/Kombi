@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/show_cb_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradientbackground">
+
+        <ImageView
+            android:id="@+id/iv_planned_trips"
+            android:layout_width="341dp"
+            android:layout_height="664dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/tvstandardbackgound"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.028" />
+
+        <EditText
+            android:id="@+id/et_car_reg_number"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="CAR REG NUMBER"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/et_car_model"
+            app:layout_constraintEnd_toEndOf="@+id/iv_planned_trips"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="@+id/iv_planned_trips"
+            app:layout_constraintTop_toBottomOf="@+id/tv_driver_yes_no" />
+
+        <EditText
+            android:id="@+id/et_car_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:hint="CAR MODEL"
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@+id/iv_planned_trips"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="@+id/iv_planned_trips"
+            app:layout_constraintTop_toBottomOf="@+id/et_car_reg_number" />
+
+        <Switch
+            android:id="@+id/btn_driver_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/gradientbackground"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/et_car_reg_number"
+            app:layout_constraintEnd_toEndOf="@+id/iv_planned_trips"
+            app:layout_constraintHorizontal_bias="0.783"
+            app:layout_constraintStart_toStartOf="@+id/iv_planned_trips"
+            app:layout_constraintTop_toTopOf="@+id/iv_planned_trips"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tv_driver_yes_no"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="64dp"
+            android:text="@string/Driver"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/et_car_reg_number"
+            app:layout_constraintEnd_toStartOf="@+id/btn_driver_question"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/iv_planned_trips"
+            app:layout_constraintTop_toTopOf="@+id/iv_planned_trips" />
+
+        <Button
+            android:id="@+id/btn_submit_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="140dp"
+            android:text="@string/register"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_planned_trips"
+            app:layout_constraintEnd_toEndOf="@+id/iv_planned_trips"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/iv_planned_trips" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

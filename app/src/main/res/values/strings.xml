@@ -16,4 +16,20 @@
     <string name="Register">Register</string>
     <string name="Change_password">Forgot</string>
     <string name="passwordtxt">Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="PlantTreeTXT">Plant a TREE FOR C$</string>
+    <string name="treeForFutureBio">Trees for the Future (TREES) trains communities on sustainable land use so that they can grow vibrant economies, thriving food systems, and a healthier planet</string>
+    <string name="plantTree">Plant TREE FOR C$50</string>
+    <string name="donateText">Donate C$10</string>
+    <string name="donate">donate C$10</string>
+    <string name="Driver">Are you a driver?</string>
+    <string name="VerifyDriversLicence">Verify drivers licence</string>
+    <string name="register">register</string>
+    <string name="makerequest">Make a Request</string>
+    <string name="select">Select Destination</string>
+    <string name="selectseats">Select seats</string>
+    <string name="selectdayui">Select Day</string>
+    <string name="selectday">Select day</string>
+    />
 </resources>

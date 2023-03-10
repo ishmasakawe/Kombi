@@ -39,6 +39,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private TextView regUserButton;
     private ProgressBar progressBar;
     private Button backButton;
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
@@ -74,7 +75,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     }
 
     private void registerUser() {
-        String email = inpEmail.getText().toString().trim();
+        String email = inpEmail.getText().toString().trim().toLowerCase();
         String Name = inpName.getText().toString().trim();
         String PhoneNumber = inpPhoneNumber.getText().toString().trim();
         String Uni = inpUni.getText().toString().trim();
@@ -146,27 +147,39 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         Integer pRank = 0;
         Integer carbonBalance = 0;
         Integer carbonRank = 0;
+        Integer ridesCounter = 0;
+        Integer CCGenerated = 0;
+        Integer TreesPlanted = 0;
+
 
         Map<String, Object> users = new HashMap<>();
-        users.put("FULL_NAME", Name);
+        users.put("FULL_NAME", Name.toUpperCase());
         users.put("STUDENT_NUMBER", StudentNumber);
         users.put("DOB", Dob);
-        users.put("HOME_ADDRESS", HomeAddress);
-        users.put("HOME_POSTCODE", HomePC);
+        users.put("HOME_ADDRESS", HomeAddress.toUpperCase());
+        users.put("HOME_POSTCODE", HomePC.toUpperCase());
         users.put("PHONE_NUMBER", PhoneNumber);
         users.put("PASSWORD", password);
-        users.put("UNI", Uni);
+        users.put("UNI", Uni.toUpperCase());
         users.put("EMAIL", email);
         users.put("CARBON_BALANCE", carbonBalance);
         users.put("CARBON_RANK", carbonRank);
         users.put("P_RANK", pRank);
-
+        users.put("RIDES_COUNTED", ridesCounter);
+        users.put("CC_GENERATED", CCGenerated);
+        users.put("TREES_PLANTED", TreesPlanted);
 
         db.collection("users").document(email).set(users).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(Register.this, "Success", Toast.LENGTH_SHORT).show();
-                //User regUser = new User(HomeAddress, HomePC,Name,password, StudentNumber,PhoneNumber, Dob,Uni,carbonBalance,email,carbonRank,pRank);
+                String Email_sent = email;
+                System.out.println(email+ " from reg class");
+                Intent i = new Intent(Register.this, DriverRegistration.class);
+                i.putExtra("Email", Email_sent);
+                startActivity(i);
+
+                Intent intent = new Intent(getApplicationContext(), DriverRegistration.class);
 
             }
         }).addOnFailureListener(new OnFailureListener() {
